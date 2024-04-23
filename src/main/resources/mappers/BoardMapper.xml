@@ -15,4 +15,17 @@
         DELETE FROM board
         WHERE board_id =#{board_id}
     </delete>
+    
+    <select id="getBoardList">
+        SELECT board_id as boardId, title, writer, created_at as createdAt
+        From board
+        ORDER BY board_id DESC
+    </select>
+    
+    <select id="getBoardOne">
+        SELECT board_id as boardID , title , contents, writer , created_at as createdAt
+        FROM board
+        WHERE board_id = #{board_id}
+    </select>
+    
 </mapper>
